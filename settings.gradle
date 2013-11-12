@@ -1,0 +1,4 @@
+include ':MatchdayExtension'
+include ':SmartExtensionAPI'
+include ':SmartExtensionUtils'
+

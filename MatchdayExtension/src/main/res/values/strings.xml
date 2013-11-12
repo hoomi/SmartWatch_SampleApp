@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HelloSmartWatch</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="configuration_text">configuration_text</string>
+    <string name="extension_name">I\'m extension</string>
+
+    <!-- Name of source, shown in preferences -->
+    <string name="source_name">Sample notification source</string>
+    <!-- Action Toasts, shown on accessory -->
+    <string name="action_event_1">Action Toast 1</string>
+    <string name="action_event_2">Action Toast 2</string>
+    <string name="action_event_3">Action Toast 3</string>
+
+    <!-- Text that is read before the display name on accessories that supports text to speech -->
+    <string name="text_to_speech">New sample notification event from</string>
+
+</resources>
