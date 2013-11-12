@@ -20,8 +20,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         Bundle b = new Bundle();
-        b.putString("homeScore", new Random().nextInt(100) + "");
-        b.putString("awayScore", new Random().nextInt(100) + "");
+        b.putInt("homeScore", new Random().nextInt(100));
+        b.putInt("awayScore", new Random().nextInt(100));
         startService(new Intent(SET_TEXT_INTENT).setClass(this, SampleExtensionService.class).putExtras(b));
     }
 }

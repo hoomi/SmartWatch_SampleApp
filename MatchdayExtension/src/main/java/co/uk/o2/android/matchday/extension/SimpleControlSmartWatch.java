@@ -61,8 +61,16 @@ class SimpleControlSmartWatch extends ControlExtension {
     public void onStart() {
         // Nothing to do. Animation is handled in onResume.
         showLayout(R.layout.fragment_main, null);
+        sendText(R.id.v_home_team_name, "England");
+        sendText(R.id.v_away_team_name,"Argentina");
+        sendText(R.id.v_away_score2, 0 + "");
+        sendText(R.id.v_away_score3, 0 + "");
+        sendText(R.id.v_home_score2, 0 + "");
+        sendText(R.id.v_home_score3, 0 + "");
+
 
     }
+
 
     @Override
     public void onStop() {
@@ -87,10 +95,10 @@ class SimpleControlSmartWatch extends ControlExtension {
     @Override
     public void onDoAction(int requestCode, Bundle bundle) {
         if (requestCode == 0 ) {
-            String homeScore = bundle.getString("homeScore");
-            String awayScore = bundle.getString("awayScore");
-            sendText(R.id.home_score_TextView,homeScore);
-            sendText(R.id.away_score_TextView,awayScore);
+            int homeScore = bundle.getInt("homeScore");
+            updateScore(true,homeScore);
+            int awayScore = bundle.getInt("awayScore");
+            updateScore(false,awayScore);
             if (hasVibrator()) {
                 startVibrator(500,200,2);
             }
@@ -100,6 +108,22 @@ class SimpleControlSmartWatch extends ControlExtension {
     }
 
 
+    private void updateScore(boolean home, int score) {
+        int hundreds, tens, ones;
+        hundreds = score / 100;
+        tens = (score - hundreds * 100) / 10;
+        ones = score % 10;
+        int id2,id3;
+        if (home) {
+            id2 = R.id.v_home_score2;
+            id3 = R.id.v_home_score3;
+        } else {
+            id2 = R.id.v_away_score2;
+            id3 = R.id.v_away_score3;
+        }
+        sendText(id2,tens+"");
+        sendText(id3,ones+"");
+    }
 
 }
 

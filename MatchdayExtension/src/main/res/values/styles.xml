@@ -3,6 +3,29 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:textViewStyle">@style/SmartWatch_TextView</item>
     </style>
 
+    <style name="SmartWatch_TextView">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+    </style>
+
+    <style name="GameScoreStyle">
+        <item name="android:layout_width">@dimen/score_box_size</item>
+        <item name="android:layout_height">@dimen/score_box_size</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+        <item name="android:textColor">@color/text_blue</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">1dp</item>
+        <item name="android:background">@color/black_background80</item>
+    </style>
+
+    <style name="GameScoreContainer">
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">@dimen/margin_small</item>
+        <item name="android:paddingRight">@dimen/margin_small</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
 </resources>
